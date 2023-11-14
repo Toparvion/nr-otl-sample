@@ -37,7 +37,7 @@ class DemoApplication {
             PeriodicMetricReader.builder(
               OtlpGrpcMetricExporter.builder()
                 .setEndpoint("https://otlp.nr-data.net:4317")
-                .addHeader("api-key", "eu01xx6d8abea3e51651406bfbec8bd8FFFFNRAL") 
+                .addHeader("api-key", System.getenv("NEW_RELIC_LICENSE_KEY")) 
                 // IMPORTANT: New Relic requires metrics to be delta temporality
                 .setAggregationTemporalitySelector(
                   AggregationTemporalitySelector.deltaPreferred()
